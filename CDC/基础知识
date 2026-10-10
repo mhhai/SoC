@@ -2,7 +2,7 @@
 对于快到慢，需要展宽，慢到快用两级触发器。
 2.多比特信号:ASYNC FIFO, D MUX。
 3.为了减少组合逻辑的毛刺，源信号最好是经过一级同步器。
-
+4.还有一种闭环解决方案，需要等到反馈确认，源信号才会撤销，很安全，代价也很大。
 
 1.Clock can’t be mux_select, because: 
   a.date-inputs of MUX may also come from DFF.
