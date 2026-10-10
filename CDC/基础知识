@@ -1,3 +1,7 @@
+1.单bit源信号必须被采样到，3个边沿原则，1.5倍目的时钟周期，因为1倍目的时钟周期的宽度，可能刚刚好两个上升沿都没采样到，对于1.1倍，1.3倍的宽度，当然也可以，但是保险起见，1.5倍。
+对于快到慢，需要展宽，慢到快用两级触发器。
+2.多比特信号:ASYNC FIFO, D MUX
+
 1.Clock can’t be mux_select, because: 
   a.date-inputs of MUX may also come from DFF.
   b.clk switch will cause mux and reg transition at the time, and they comb in the follow logic.
