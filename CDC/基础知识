@@ -3,6 +3,7 @@
 2.多比特信号:ASYNC FIFO, D MUX。
 3.为了减少组合逻辑的毛刺，源信号最好是经过一级同步器。
 4.还有一种闭环解决方案，需要等到反馈确认，源信号才会撤销，很安全，代价也很大。
+5.对于源端发送的数据，如果中间组合逻辑太长，下一个时钟沿，没有被采样到，依然算是setup违例。
 
 1.Clock can’t be mux_select, because: 
   a.date-inputs of MUX may also come from DFF.
