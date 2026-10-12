@@ -6,6 +6,7 @@
 5.对于源端发送的数据，如果中间组合逻辑太长，下一个时钟沿，没有被采样到，依然算是setup违例。
 6.setup和hold time需要从晶体管level来理解。DFF由master latch和slave latch组成，对于master latch，如果数据来得太慢，会导致不稳定，如果数据来得太快，刚稳定好，第二个数据又进
   来了, 都会出现问题。
+7.打两拍数据可以稳定，是因为第一拍的数据虽然有问题，但最终还是在一个bclk还是可以稳定下来的，第二个寄存器就没有亚稳态了。FF2的作用是隔离风险。
 
 1.Clock can’t be mux_select, because: 
   a.date-inputs of MUX may also come from DFF.
