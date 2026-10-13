@@ -8,6 +8,7 @@
   来了, 都会出现问题。
 7.打两拍数据可以稳定，是因为第一拍的数据虽然有问题，但最终还是在一个bclk还是可以稳定下来的，第二个寄存器就没有亚稳态了。FF2的作用是隔离风险。
 8.对于单脉冲同步问题，pluse->level->sync->edge detect, 如果数据来得太快，可以加反馈或者用异步FIFO了。
+9.异步FIFO，需要考虑：格雷码，读写指针同步，判断空和满的问题，以及FIFO的大小。
 
 1.Clock can’t be mux_select, because: 
   a.date-inputs of MUX may also come from DFF.
